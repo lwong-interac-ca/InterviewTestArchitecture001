@@ -1,9 +1,102 @@
-<mxfile host="app.diagrams.net" modified="2024-07-08T17:44:04.641Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0" version="24.6.4" etag="wFR9aNJFu5Bb-zj46bsE" type="github">
+<mxfile host="app.diagrams.net" modified="2024-07-08T19:26:03.708Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0" etag="nqrGhA0TTVS8EMIlOLiK" version="24.6.4" type="github">
   <diagram name="Page-1" id="acKOXjTOYbH0A2gXjaoP">
-    <mxGraphModel>
+    <mxGraphModel dx="1154" dy="539" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="is-cgLbdl2dnwczPxhnA-1" value="&lt;div&gt;End User&lt;/div&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="20" y="360" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="is-cgLbdl2dnwczPxhnA-3" value="&lt;div&gt;Systems Integrator Application&lt;/div&gt;" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="270" width="250" height="200" as="geometry">
+            <mxRectangle x="120" y="290" width="210" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="is-cgLbdl2dnwczPxhnA-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="is-cgLbdl2dnwczPxhnA-3" source="is-cgLbdl2dnwczPxhnA-4" target="is-cgLbdl2dnwczPxhnA-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="125" y="190" />
+              <mxPoint x="125" y="190" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="is-cgLbdl2dnwczPxhnA-15" value="&lt;div&gt;events&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="is-cgLbdl2dnwczPxhnA-14">
+          <mxGeometry x="-0.219" y="-2" relative="1" as="geometry">
+            <mxPoint x="2" y="8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="is-cgLbdl2dnwczPxhnA-4" value="Interac SDK" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="is-cgLbdl2dnwczPxhnA-3">
+          <mxGeometry x="30" y="50" width="190" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="is-cgLbdl2dnwczPxhnA-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="is-cgLbdl2dnwczPxhnA-3" source="is-cgLbdl2dnwczPxhnA-3" target="is-cgLbdl2dnwczPxhnA-4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="78" y="200" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="is-cgLbdl2dnwczPxhnA-13" value="&lt;div&gt;launch data&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="is-cgLbdl2dnwczPxhnA-12">
+          <mxGeometry x="0.5408" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="is-cgLbdl2dnwczPxhnA-5" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.3333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="is-cgLbdl2dnwczPxhnA-1" target="is-cgLbdl2dnwczPxhnA-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="420" as="sourcePoint" />
+            <mxPoint x="440" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="is-cgLbdl2dnwczPxhnA-28" value="Vendor A System" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="150" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="is-cgLbdl2dnwczPxhnA-29" value="POST /approval/{transactionRequestId}" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="is-cgLbdl2dnwczPxhnA-28">
+          <mxGeometry y="30" width="250" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="is-cgLbdl2dnwczPxhnA-32" value="OIDC Provider" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="30" width="140" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="is-cgLbdl2dnwczPxhnA-33" value="GET /authorize" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="is-cgLbdl2dnwczPxhnA-32">
+          <mxGeometry y="30" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="is-cgLbdl2dnwczPxhnA-34" value="&lt;div&gt;POST /oidc/userinfo&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="is-cgLbdl2dnwczPxhnA-32">
+          <mxGeometry y="60" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="is-cgLbdl2dnwczPxhnA-37" value="Vendor B System" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="320" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="is-cgLbdl2dnwczPxhnA-38" value="POST /performApprovedRequest" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="is-cgLbdl2dnwczPxhnA-37">
+          <mxGeometry y="30" width="230" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="is-cgLbdl2dnwczPxhnA-41" value="Interac API" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="470" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="is-cgLbdl2dnwczPxhnA-44" value="POST /transactionRequest" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="is-cgLbdl2dnwczPxhnA-41">
+          <mxGeometry y="30" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="is-cgLbdl2dnwczPxhnA-45" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=0;exitX=1;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="is-cgLbdl2dnwczPxhnA-4" target="is-cgLbdl2dnwczPxhnA-41">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="210" y="400" as="sourcePoint" />
+            <mxPoint x="260" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="is-cgLbdl2dnwczPxhnA-46" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=-0.004;entryY=0.086;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="is-cgLbdl2dnwczPxhnA-4" target="is-cgLbdl2dnwczPxhnA-37">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="210" y="400" as="sourcePoint" />
+            <mxPoint x="260" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="is-cgLbdl2dnwczPxhnA-47" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.007;entryY=0.137;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.975;exitY=0.222;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="is-cgLbdl2dnwczPxhnA-4" target="is-cgLbdl2dnwczPxhnA-28">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="352" y="342" as="sourcePoint" />
+            <mxPoint x="260" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="is-cgLbdl2dnwczPxhnA-48" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.003;entryY=0.076;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="is-cgLbdl2dnwczPxhnA-4" target="is-cgLbdl2dnwczPxhnA-32">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="210" y="400" as="sourcePoint" />
+            <mxPoint x="430" y="110" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
