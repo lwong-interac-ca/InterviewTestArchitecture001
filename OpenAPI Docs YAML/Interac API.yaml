@@ -1,0 +1,101 @@
+openapi: 3.0.3
+info:
+  title: InterviewTestArchitecture001 - API Docs
+  description: |-
+    This is a simple API documentation intended for basic test architecture skills questions [here](https://github.com/lwong-interac-ca/InterviewTestArchitecture001)
+  contact:
+    email: lwong@interac.ca
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.0
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io
+
+    
+paths:
+  /transactionRequest:
+    summary: Transaction Request Management
+    description: Interac Backend Systems API
+    post:
+      tags:
+      - Transaction Request Management
+      operationId: transactionRequestCreation
+      summary:  Transaction Request Creation
+      description: |-
+        This API endpoint is called by INTERAC SDK to submit Transaction Request details to create a transaction request.
+      parameters:
+      - $ref: '#/components/parameters/Authorization-CustomerToken'
+      - $ref: '#/components/parameters/RequestId'
+      - $ref: '#/components/parameters/CorrelationId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TransactionAuthRequest'
+        required: true
+      responses:
+        '201':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TransactionAuthResponse'       
+        '400':
+          description: Invalid data supplied
+        '500':
+          description: Server Error
+
+components:
+  parameters:
+    Authorization-CustomerToken:
+      in: header
+      name: Authorization
+      description: Access token issued to INTERAC SDK by the FI for the customer.
+      schema:
+        type: string
+      required: true
+      example: 'Bearer [access-token]'
+    CorrelationId:
+      in: header
+      name: x-k-correlation-id
+      description: |-
+        A unique identifier used to identify all the APIs invoked during the Transaction Request process.
+      schema:
+        type: string
+        minLength: 20
+        maxLength: 36
+      required: true
+      example: 6a364e9d-77ed-49e5-b192-88cf1ae2c62d
+    RequestId:
+      in: header
+      name: x-k-request-id
+      description: |-
+        A unique identifier for the request, a new value should be generated for every request including retry.
+      schema:
+        type: string
+        minLength: 20
+        maxLength: 36
+      required: true
+      example: ca0197ac-a321-44ba-8d1a-62d7b281e35a
+      
+  schemas:
+    TransactionAuthRequest:
+      type: object
+      properties:
+        transactionType:
+          type: string
+          description: Order Status
+          enum:
+            - txTypeA
+            - txTypeB
+        amount:
+          type: number
+          example: 12.21
+    TransactionAuthResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          example: ca0197ac-b221-44ba-8d1a-62d7b281e35a

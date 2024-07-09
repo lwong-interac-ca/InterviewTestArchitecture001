@@ -1,0 +1,110 @@
+openapi: 3.0.3
+info:
+  title: InterviewTestArchitecture001 - API Docs
+  description: |-
+    This is a simple API documentation intended for basic test architecture skills questions [here](https://github.com/lwong-interac-ca/InterviewTestArchitecture001)
+  contact:
+    email: lwong@interac.ca
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.0
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io
+
+    
+paths:
+  /performApprovedRequest:
+    summary: Transaction Request Approval
+    description: Transaction Request Approval Systems API
+    post:
+      tags:
+        - Transaction Request Approval
+      operationId: transactionRequestApproval
+      description: |-
+        Perform a previously approved request
+      parameters:
+      - $ref: '#/components/parameters/Authorization-CustomerToken'
+      - $ref: '#/components/parameters/RequestId'
+      - $ref: '#/components/parameters/CorrelationId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TransactionAuthRequest'
+        required: true
+      responses:
+        '201':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TransactionAuthResponse'       
+        '400':
+          description: Invalid data supplied
+        '500':
+          description: Server Error
+
+components:
+  parameters:
+    Authorization-CustomerToken:
+      in: header
+      name: Authorization
+      description: Access token issued to INTERAC SDK by the FI for the customer.
+      schema:
+        type: string
+      required: true
+      example: 'Bearer [access-token]'
+    CorrelationId:
+      in: header
+      name: x-k-correlation-id
+      description: |-
+        A unique identifier used to identify all the APIs invoked during the Transaction Request process.
+      schema:
+        type: string
+        minLength: 20
+        maxLength: 36
+      required: true
+      example: 6a364e9d-77ed-49e5-b192-88cf1ae2c62d
+    RequestId:
+      in: header
+      name: x-k-request-id
+      description: |-
+        A unique identifier for the request, a new value should be generated for every request including retry.
+      schema:
+        type: string
+        minLength: 20
+        maxLength: 36
+      required: true
+      example: ca0197ac-a321-44ba-8d1a-62d7b281e35a
+      
+  schemas:
+    TransactionAuthResponse:
+      type: object
+      properties:
+        responseCode:
+          type: string
+          example: "00"
+          description: >
+            Response Code:
+              * 00 - Approved
+              * 40 - General Failure
+              * 41 - Expiration of the payment token
+              * 42 - Validation failure
+          enum:
+            - 00 
+            - 40
+            - 41
+    TransactionAuthRequest:
+      type: object
+      properties:
+        transaction_ref:
+          type: string
+          example: 240b9dba-3361-4b6e-8612-2905ef59cd07
+        amount:
+          type: number
+          example: 12.21
+        transaction_data_enc:
+          type: string
+          example: eyJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiUlNBLU9BRVAtMjU2In0.O01BFr_XxGzKEUb_Z9vQOW3DX2cQFxojrRy2JyM5_nqKnrpAa0rvcPI_ViT2PdPRogBwjHGRDM2uNLd1BberKQlaZYuqPGXnpzDQjosF0tQlgdtY3uEZUMT-9WPP8jCxxQg0AGIm4abkp1cgzAWBQzm1QYL8fwaz16MS48ExRz41dLhA0aEWE4e7TYzjrfaK8M4wIUlQCFIl-wS1N3U8W2XeUc9MLYGmHft_Rd9KJs1c-9KKdUQf6tEzJ92TGEC7TRZX4hGdtszIq3GGGBQaW8P9jPozqaDdrikF18D0btRHNf3_57sR_CPEGYX0O4mY775CLWqB4Y1adNn-fZ0xoA.ln7IYZDF9TdBIK6i.ZhQ3Q5TY827KFQw8DdRRzQVJVFdIE03B6AxMNZ1sQIjlUB4QUxg-UYqjPJESPUmFsODeshGWLa5t4tUri5j6uC4mFDbkbemPmNKIQiY5m8yc.5KKhrggMRm7ydVRQKJaT0g
